@@ -1,5 +1,7 @@
 package com.example.menu
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -35,7 +37,8 @@ class Register : Fragment() {
                             if (binding.email.text.toString().isNotEmpty()) {
                                 handler.insertUserData(username.text.toString(), pass.text.toString(), email.text.toString(), address.text.toString())
                                 Toast.makeText(activity, "Register Successful", Toast.LENGTH_SHORT).show()
-                                view?.findNavController()?.navigate(R.id.action_register_to_login)
+                                //view?.findNavController()?.navigate(R.id.login)
+                                startActivity(Intent(activity, Main2Activity::class.java))
                             } else {
                                 Toast.makeText(activity, "Email cannot be empty", Toast.LENGTH_SHORT).show()
                             }
