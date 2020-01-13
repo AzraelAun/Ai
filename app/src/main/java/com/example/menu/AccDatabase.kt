@@ -5,10 +5,10 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.menu.GlobalVariable.username
+import com.example.menu.GlobalVariable.userID
 
 object GlobalVariable{
-    lateinit var username:String
+    lateinit var userID:String
 }
 
 class AccDatabase (context: Context): SQLiteOpenHelper(context, dbname, factory, version) {

@@ -27,7 +27,9 @@ class EditProfile : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentEditProfileBinding>(inflater,
             R.layout.fragment_edit_profile,container,false)
 
-        var data = handler.retrieveData(GlobalVariable.username)
+            handler = AccDatabase(binding.root.context)
+
+        var data = handler.retrieveData(GlobalVariable.userID)
         for(i in 0..(data.size-1)){
             binding.editusername.append(data.get(i).username)
             binding.editpass.append(data.get(i).password)
@@ -49,9 +51,6 @@ class EditProfile : Fragment() {
             } else
                 Toast.makeText(activity, "Password cannot be empty", Toast.LENGTH_SHORT).show()
         }
-
         return binding.root
     }
-
-
 }
